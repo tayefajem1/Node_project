@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM node:18-alpine
 
 # Install build tools
 RUN apk add --no-cache python3 make g++
