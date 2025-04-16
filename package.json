@@ -1,40 +1,21 @@
 {
-<<<<<<< HEAD
-  "name": "app-service-hello-world",
-  "description": "Simple Hello World Node.js sample for Azure App Service",
-  "version": "0.0.1",
-  "private": true,
-=======
   "name": "nodejs-image-demo",
   "version": "1.0.0",
   "description": "Node.js image demo",
-  "author": "Sammy the Shark <tayefajem2000@yahoo.com>",
->>>>>>> 1f4c345e791662cb8d224a0b99c8fde05543f750
-  "license": "MIT",
-  "author": "Microsoft",
+  "main": "app.js",
   "scripts": {
-<<<<<<< HEAD
-    "start": "node index.js",
-    "lint": "eslint",
-    "format": "prettier --single-quote --write *.js",
-    "build": "echo \"No build step necessary\""
-  },
-  "devDependencies": {
-    "eslint": "^7.5.0",
-    "prettier": "^2.0.5"
-=======
     "start": "node app.js",
-    "build": "echo \"No build step necessary\"",
-    "test": "echo \"No tests specified\" && exit 0"
->>>>>>> 1f4c345e791662cb8d224a0b99c8fde05543f750
+    "build": "echo \"No build step defined\""
   },
+  "author": "Sammy the Shark <tayefajem2000@yahoo.com>",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express"
+  ],
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
-  },
-  "engines": {
-    "node": ">=10"
+    "express": "^4.16.4"
   }
 }
 
