@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment-nodeproject
+  name: my-deployment-loadbalancer
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-nodeprojectapp
+      app: my-nodeproject
   template:
     metadata:
       labels:
-        app: my-nodeprojectapp
+        app: my-nodeproject
     spec:
       containers:
       - name: my-container-lb
-        image: tayefajem/nodeproject-ui:1.0.0
+        image: tayefajem/sample-ui:1.0.0
         resources:
           requests:
             cpu: 100m
@@ -31,7 +31,7 @@ kind: Service
 metadata:
   name: my-nodeproject
   labels:
-    app: my-nodeprojectapp
+    app: my-nodeproject
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-tcp-idle-timeout: "4"
 #    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
@@ -41,4 +41,4 @@ spec:
   ports:
   - port: 80
   selector:
-    app: my-nodeprojectapp
+    app: my-nodeproject
