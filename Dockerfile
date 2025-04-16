@@ -1,28 +1,23 @@
-# Use an official Node.js 10 image with Alpine for a small footprint
-FROM node:10-alpine
+FROM node:18-alpine
 
-# Create app directory and set correct ownership for non-root user
-RUN mkdir -p /home/node/app/node_modules && \
-    chown -R node:node /home/node/app
+# Install build tools
+RUN apk add --no-cache python3 make g++
 
-# Set working directory
+# Create app directory and set ownership
 WORKDIR /home/node/app
+RUN mkdir -p node_modules && chown -R node:node /home/node/app
 
-# Copy dependency files and change user before running npm install
+# Copy package files
 COPY package*.json ./
 
-# Switch to the non-root user
-USER node
-
-# Install dependencies
+# Install dependencies as root (optional: switch to USER node after)
 RUN npm install
 
-# Copy the rest of the application files with proper ownership
+# Copy rest of the app
 COPY --chown=node:node . .
 
-# Expose application port
+# Switch to non-root user (after install)
+USER node
+
 EXPOSE 8080
-
-# Run the application
-CMD [ "node", "app.js" ]
-
+CMD ["node", "app.js"]
