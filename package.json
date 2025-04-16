@@ -11,7 +11,7 @@
     "express"
   ],
   "scripts": {
-  "build": "react-scripts build"
+  "build": "echo \"No build step necessary\""
 },
   "dependencies": {
     "express": "^4.21.2"
