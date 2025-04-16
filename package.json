@@ -1,7 +1,7 @@
 {
   "name": "nodejs-image-demo",
   "version": "1.0.0",
-  "description": "nodejs image demo",
+  "description": "Node.js image demo",
   "author": "Sammy the Shark <tayefajem2000@yahoo.com>",
   "license": "MIT",
   "main": "app.js",
@@ -11,9 +11,12 @@
     "express"
   ],
   "scripts": {
-  "build": "echo \"No build step necessary\""
-},
+    "start": "node app.js",
+    "build": "echo \"No build step necessary\"",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
   "dependencies": {
     "express": "^4.21.2"
   }
 }
+
