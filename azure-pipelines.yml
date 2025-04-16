@@ -19,18 +19,18 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
 - task: Docker@2
   inputs:
     containerRegistry: 'Doker1'
-    repository: 'tayefajem/kennytaye'
+    repository: 'tayefajem/kennyjimmy'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    buildContext: 'deploy.yml'
     tags: '1'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: '**'
+    Contents: 'deploy.yml'
     TargetFolder: '$(build.artifactstagingdirectory)'
 
 - task: PublishBuildArtifacts@1
