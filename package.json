@@ -1,19 +1,26 @@
 {
-  "name": "nodejs-image-demo",
-  "version": "1.0.0",
-  "description": "nodejs image demo",
-  "author": "Sammy the Shark <tayefajem2000@yahoo.com>",
+  "name": "app-service-hello-world",
+  "description": "Simple Hello World Node.js sample for Azure App Service",
+  "version": "0.0.1",
+  "private": true,
   "license": "MIT",
-  "main": "app.js",
-  "keywords": [
-    "nodejs",
-    "bootstrap",
-    "express"
-  ],
+  "author": "Microsoft",
   "scripts": {
-  "build": "react-scripts build"
-},
+    "start": "node index.js",
+    "lint": "eslint",
+    "format": "prettier --single-quote --write *.js",
+    "build": "echo \"No build step necessary\""
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "prettier": "^2.0.5"
+  },
   "dependencies": {
-    "express": "^4.21.2"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
